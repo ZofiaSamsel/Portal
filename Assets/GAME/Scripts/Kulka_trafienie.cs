@@ -6,8 +6,9 @@ public class Kulka_trafienie : MonoBehaviour
 	[SerializeField] PlayerPortalManager ppm;
 
 	RaycastHit hit;
+    [SerializeField] float shootingDelay = 5;
 
-	private void OnEnable()
+    private void OnEnable()
 	{
 		ppm = GameObject.FindObjectOfType<PlayerPortalManager>();
 	}
@@ -19,6 +20,7 @@ public class Kulka_trafienie : MonoBehaviour
 
 		if (Physics.Raycast(transform.position, kierunek, out hit))
 		{
+
 			ppm.Portal(PortalColor, hit);
 		}
 

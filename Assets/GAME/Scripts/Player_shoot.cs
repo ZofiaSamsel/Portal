@@ -40,17 +40,21 @@ public class Player_shoot : MonoBehaviour
 		}
 	}
 
-	private void Shoot(PortalColor portalToPlaceColor)
+
+
+    private void Shoot(PortalColor portalToPlaceColor)
 	{
-		//Debug.DrawRay(headTransform.position, headTransform.forward, Color.green, 2f);
-		if (Physics.Raycast(headTransform.position, headTransform.forward, out hit))
+
+            //Debug.DrawRay(headTransform.position, headTransform.forward, Color.green, 2f);
+            if (Physics.Raycast(headTransform.position, headTransform.forward, out hit))
 		{
 			//print(hit.transform.name);
 			ShootBall(portalToPlaceColor, hit);
 			myAnimator.SetTrigger("Shoot");
 			ppm.PlacePortal(portalToPlaceColor, hit);
 		}
-	}
+
+    }
 
 	private void ShootBall(PortalColor portalToPlaceColor, RaycastHit hit)
 	{
